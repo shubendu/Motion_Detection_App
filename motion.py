@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
-from PIL import Image
-import base64
+# from PIL import Image
+# import base64
 
 
 
@@ -77,38 +77,38 @@ def classify(result):
 
 
 def main():
-    st.set_page_config(page_title='HOLA')
-    hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-            """
-    st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+    # st.set_page_config(page_title='HOLA')
+    # hide_streamlit_style = """
+    #         <style>
+    #         #MainMenu {visibility: hidden;}
+    #         footer {visibility: hidden;}
+    #         </style>
+    #         """
+    # st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 
 
 
 
-    main_bg = "background.jpg"
-    main_bg_ext = "jpg"
+    # main_bg = "background.jpg"
+    # main_bg_ext = "jpg"
 
-    side_bg = "background.jpg"
-    side_bg_ext = "jpg"
+    # side_bg = "background.jpg"
+    # side_bg_ext = "jpg"
 
-    st.markdown(
-    f"""
-    <style>
-    .reportview-container {{
-        background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
-    }}
-    .sidebar .sidebar-content {{
-        background: url(data:image/{side_bg_ext};base64,{base64.b64encode(open(side_bg, "rb").read()).decode()})
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-    )
+    # st.markdown(
+    # f"""
+    # <style>
+    # .reportview-container {{
+    #     background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
+    # }}
+    # .sidebar .sidebar-content {{
+    #     background: url(data:image/{side_bg_ext};base64,{base64.b64encode(open(side_bg, "rb").read()).decode()})
+    # }}
+    # </style>
+    # """,
+    # unsafe_allow_html=True
+    # )
 
 
     html_temp = """
@@ -138,8 +138,8 @@ def main():
     inputs=[[f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13]]
     if st.button('Classify'):
         if option=='Decision Tree':
-            # st.success((DT_model.predict(inputs))[0])
-            classify((DT_model.predict(inputs))[0])
+            st.success((DT_model.predict(inputs))[0])
+            # classify((DT_model.predict(inputs))[0])
         else:
             st.success((RF_model.predict(inputs))[0])
 
